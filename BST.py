@@ -60,11 +60,12 @@ class BST:
         else:
             self.preorderNode(self.root)
     def preorderNode(self,curr):
+        if not curr:
+            return
         print(curr.data) # print root
-        if curr.left: # print left
-            self.preorderNode(curr.left)
-        if curr.right: # print left
-            self.preorderNode(curr.right)
+        self.preorderNode(curr.left) # print left
+        self.preorderNode(curr.right) #print right
+
     def minvalue(self):
         if not self.root:
             return 'Empty tree'
